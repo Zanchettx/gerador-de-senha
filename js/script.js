@@ -37,8 +37,8 @@ function generatePassword() {
   novaSenha = pass;
 }
 
-function copyPassword() {
-  navigator.clipboard.writeText(novaSenha); // Copia o que está dentro da variável novaSenha
+async function copyPassword() {
+  await navigator.clipboard.writeText(novaSenha); // Copia o que está dentro da variável novaSenha
   console.log(novaSenha);
   alert("Senha copiada com sucesso!");
 }
