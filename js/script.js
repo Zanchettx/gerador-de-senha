@@ -37,8 +37,16 @@ function generatePassword() {
   novaSenha = pass;
 }
 
-async function copyPassword() {
-  await navigator.clipboard.writeText(novaSenha); // Copia o que está dentro da variável novaSenha
-  console.log(novaSenha);
-  alert("Senha copiada com sucesso!");
+// async function copyPassword() {
+//   await navigator.clipboard.writeText(novaSenha); // Copia o que está dentro da variável novaSenha
+//   console.log(novaSenha);
+//   alert("Senha copiada com sucesso!");
+// } --> Estava tentando resolver o erro de não copiar a senha (estava acontecendo por causa de um erro no DOM)
+
+function copyPassword() {
+  navigator.clipboard
+    .writeText(novaSenha)
+    .then(() => alert("Senha copiada com sucesso!")); // O método then( ) é chamado após a promise ser resolvida. Em seguida, podemos decidir o que fazer com ela. 1° Copie a senha então execute o alert.
 }
+
+// Problema resolvido ;)
